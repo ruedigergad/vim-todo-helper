@@ -1,15 +1,15 @@
 # vim-todo-helper
 
-vim-todo-helper is intended to aid in working with todo items.
+vim-todo-helper is intended to aid in working with to-do items.
 
 ## Overview
 
 vim-todo-helper currently offers the following features:
 
-* Maintain unique ids for todo items.
-* Maintain updated modification timestamps for todo items.
-* Maintain a list of deleted todo items.
-* Provide default values when inserting new todo items in order to speed up the workflow.
+* Maintain unique ids for to-do items.
+* Maintain updated modification timestamps for to-do items.
+* Maintain a list of deleted to-do items.
+* Provide default values when inserting new to-do items in order to speed up the workflow.
 
 ### Usage Example
 
@@ -19,8 +19,8 @@ Assume you are starting to edit a new file to organize your todos.
 
     gvim todo.otl &
 
-Starting with the empty file, you can insert a new todo item below the current line by pressing "+".
-Alternatively, you can use "*" to insert a new todo above the current line.
+Starting with the empty file, you can insert a new to-do item below the current line by pressing "+".
+Alternatively, you can use "*" to insert a new to-do above the current line.
 A possible result is shown below.
 The "X" marks the spot at which the cursor will be placed.
 
@@ -40,8 +40,8 @@ Side note: I use the setting "noremap <silent><buffer> t :call SetNextTag()<cr>"
 
 The next example shows that the timestamps are updated whenever an item is changed:
 
-    [X] [3_Low] A low priority todo (This was marked as done.)	<1> {2015-12-12_13:50:03}
-    [_] [3_Low] Another low priority todo (Fixed a typo here.)	<2> {2015-12-12_13:51:18}
+    [X] [3_Low] A low priority to-do (This was marked as done.)	<1> {2015-12-12_13:50:03}
+    [_] [3_Low] Another low priority to-do (Fixed a typo here.)	<2> {2015-12-12_13:51:18}
     [_] [1_High] Change importance.	<3> {2015-12-12_13:51:30}
     [_] [0_URGENT] An urgent task	<4> {2015-12-12_13:48:40}
 
@@ -51,12 +51,12 @@ This data is intended for later use when synchronizing files between multiple co
 An example of how this looks is shown below:
 
     [X] [3_Low] A low priority todo	<1> {2015-12-12_13:50:03}
-    [_] [3_Low] Another low priority todo (Fixed a typo here.)	<2> {2015-12-12_13:51:18}
+    [_] [3_Low] Another low priority to-do (Fixed a typo here.)	<2> {2015-12-12_13:51:18}
     [_] [1_High] Change importance.	<3> {2015-12-12_13:51:30}
     [_] [0_URGENT] An urgent task	<4> {2015-12-12_13:48:40}
     : <4> {}
 
-Please note that this metadata has to be in the very last line of the file, right now.
+Please note that this meta data has to be in the very last line of the file, right now.
 
 Last but not least, an example is given how the content looks after deleting some entries:
 
