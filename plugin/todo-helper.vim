@@ -31,6 +31,10 @@ function InsertNewItem(above)
     execute l:op_string
 endfunction
 
+function! Touch()
+        execute line(".") . 's/{.\{19}}$/' . strftime("{%Y-%m-%d_%H:%M:%S}") . "/"
+endfunction
+
 function! UpdateDate(line)
     let b:changing = 1
     let b:cursor_position = getcurpos()
