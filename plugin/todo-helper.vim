@@ -14,15 +14,10 @@ let g:todo_item_pattern = '\t<[0-9]*> {.\{19}}$'
 let g:id_pattern = '<[0-9]*>'
 let g:deleted_ids_list_pattern = '{[0-9,]*}'
 
-function InsertTimeStamp()
-    let @x = strftime(" {%Y-%m-%d_%H:%M:%S}")
-	normal! "xp
-endfunction
-
-function InsertId()
+function AppendIdAndTimeStamp()
     let b:max_id = b:max_id + 1
-    let @x = "\t<" . b:max_id . ">"
-	normal! "xp
+    let @x = "\t<" . b:max_id . "> " . strftime("{%Y-%m-%d_%H:%M:%S}")
+	normal! $"xp
 endfunction
 
 function InsertNewItem(above)
@@ -32,7 +27,7 @@ function InsertNewItem(above)
         let l:insert_op = "o"
     endif
 
-    let l:op_string = "normal! " . l:insert_op . "[_] [3_Low] \<ESC>mx$:call InsertId()\<cr>:call InsertTimeStamp()\<cr>`x:delmarks x\<cr>a"
+    let l:op_string = "normal! " . l:insert_op . "[_] [3_Low] \<ESC>mx$:call AppendIdAndTimeStamp()\<cr>`x:delmarks x\<cr>a"
     execute l:op_string
 endfunction
 
